@@ -1,6 +1,33 @@
 var startButton = document.querySelector("#start-button")
 var startPage = document.querySelector(".start-page")
 var quizPage = document.querySelector(".quiz-pages")
+var endPage = document.querySelector(".end-page")
+
+var submitScore = document.querySelector(".submit-score")
+var scoreList = document.querySelector(".score-list")
+var clearScore = document.querySelector(".clear-score")
+var tryAgain = document.querySelector(".start-over")
+
+var countdownTimer = document.querySelector("#countdown")
+var timeLeft = "10"
+
+function countdown () {
+    var timeInterval = setInterval(() => {
+    countdownTimer.innerHTML = timeLeft
+        if (timeLeft < 1) {
+            countdownTimer.innerHTML = "0";
+            clearInterval(timeInterval);
+            renderEnd()
+        } else {
+            timeLeft--;
+        } 
+    }, 1000);
+
+}
+
+var scoreInfo = {
+    // GENERATE li THAT INCL. BOTH MOST RECENT SCORE + INITIALS
+} 
 
 var quizQuestions = [
     {
@@ -25,10 +52,12 @@ var optionOne = document.querySelector("#option-one")
 var optionTwo = document.querySelector("#option-two")
 var optionThree = document.querySelector("#option-three")
 var optionFour = document.querySelector("#option-four")
+var answerValidator = document.querySelector(".answer-validator")
 
 var currentIndex = 0
 
 function renderQuestion () {
+    countdown()
     quizText.textContent = quizQuestions[currentIndex].text
     optionOne.value = quizQuestions[currentIndex].choices[0]
     optionTwo.value = quizQuestions[currentIndex].choices[1]
@@ -36,9 +65,28 @@ function renderQuestion () {
     optionFour.value = quizQuestions[currentIndex].choices[3]
 }
 
-function nextQuestion () {
+function nextQuestion (event) {
+    console.log(event)
+    var correctOption = quizQuestions[currentIndex].answer
+    var selectedOption = event.target.value
+    if (correctOption === selectedOption) {
+        answerValidator.textContent = "Correct!"
+    } else {
+        answerValidator.textContent = "Wrong!";
+        timeLeft -= 5;
+    } 
     currentIndex++
+    if (currentIndex < quizQuestions.length) {
     renderQuestion()
+    } else {
+    renderEnd()
+    }
+    
+}
+
+function renderEnd () {
+    quizPage.style.display = "none"
+    endPage.style.display = "block"
 }
 
 startButton.addEventListener("click", function(){
@@ -51,3 +99,10 @@ optionOne.addEventListener("click", nextQuestion)
 optionTwo.addEventListener("click", nextQuestion)
 optionThree.addEventListener("click", nextQuestion)
 optionFour.addEventListener("click", nextQuestion)
+
+
+localStorage.
+
+// timer
+// localStorage for score + initials
+// 

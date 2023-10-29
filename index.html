@@ -8,21 +8,43 @@
 </head>
 <body>
     <!-- start page with start button -->
-    <div class="start-page">
-        <h1>Coding Quiz</h1>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum suscipit, itaque ea quae totam explicabo corrupti neque impedit illum voluptatum, facilis perferendis sed officia nihil id earum? Adipisci, esse deleniti.</p>
-        <input type="button" value="Start Quiz" id="start-button">
-    </div>
-    <!-- quiz pages -->
-    <div class="quiz-pages">
-        <h1 id="question-text">Question 1</h1>
-        <input type="button" value="Option 1" id="option-one">
-        <input type="button" value="Option 2" id="option-two">
-        <input type="button" value="Option 3" id="option-three">
-        <input type="button" value="Option 4" id="option-four">
-    </div>
-    <!-- end page (includes initials and option to save)-->
-    <!-- high scores page -->
+    <header>
+        <a class="highscore-page">View Highscores</a>
+        <div class="timer"><p>Time:<p id="countdown">0</p></p></div>
+    </header>
+    <main>
+        <div class="start-page">
+            <h1>Coding Quiz</h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum suscipit, itaque ea quae totam explicabo corrupti neque impedit illum voluptatum, facilis perferendis sed officia nihil id earum? Adipisci, esse deleniti.</p>
+            <input type="button" value="Start Quiz" id="start-button">
+        </div>
+        <!-- quiz pages -->
+        <div class="quiz-pages">
+            <h1 id="question-text">Question 1</h1>
+            <input type="button" value="Option 1" id="option-one">
+            <input type="button" value="Option 2" id="option-two">
+            <input type="button" value="Option 3" id="option-three">
+            <input type="button" value="Option 4" id="option-four">
+            <p class="answer-validator"></p>
+        </div>
+        <!-- end page (includes initials and option to save)-->
+        <div class="end-page">
+            <h1>All done!</h1>
+            <p class="score">Your score is: </p>
+            <label>Enter initials</label>
+            <input type="text">
+            <input type="button" value="Submit" id="submit-score">
+        </div>
+        <!-- high scores page -->
+        <div>
+            <h1>Highscores</h1>
+            <ol id="score-list"></ol>
+            <input type="button" value="Go back" id="start-over">
+            <input type="button" value="Clear highscores" id="clear-score">
+        </div>
+    </main>
+    
+
     <script src="./Assets/javascript/script.js"></script>
 </body>
 </html>
