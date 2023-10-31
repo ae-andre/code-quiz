@@ -10,11 +10,11 @@ In planning the design, I chose a layout that gave enough space between elements
 
 ## Page Link
 
-<!-- ADD PAGE LINK -->
+https://ae-andre.github.io/code-quiz/
 
 ## Mock up
 
-![The code quiz webpage includes a button to view highscores, a title and instructions, a timer, and a button to begin the quiz](./Assets/code-quiz-mock-up.png)
+![The code quiz webpage includes a button to view highscores, a title and instructions, a timer, and a button to begin the quiz](./Assets/images/code-quiz-mock-up.png)
 
 ## License
 
