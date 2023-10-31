@@ -4,43 +4,46 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./Assets/css/styles.css">
-    <title>Document</title>
+    <title>Coding Quiz</title>
 </head>
 <body>
     <!-- start page with start button -->
     <header>
-        <a class="highscore-page">View Highscores</a>
+        <input type="button" id="highscore-link" value="View Highscores">
         <div class="timer"><p>Time:<p id="countdown">0</p></p></div>
     </header>
     <main>
         <div class="start-page">
             <h1>Coding Quiz</h1>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum suscipit, itaque ea quae totam explicabo corrupti neque impedit illum voluptatum, facilis perferendis sed officia nihil id earum? Adipisci, esse deleniti.</p>
-            <input type="button" value="Start Quiz" id="start-button">
+            <p>Test your knowledge of basic coding concepts. Wrong answers will result in ten seconds deducted from your total available quiz time. Good luck!</p>
+            <input type="button" value="Start Quiz" id="start-button" class="purple-button">
         </div>
         <!-- quiz pages -->
         <div class="quiz-pages">
             <h1 id="question-text">Question 1</h1>
-            <input type="button" value="Option 1" id="option-one">
-            <input type="button" value="Option 2" id="option-two">
-            <input type="button" value="Option 3" id="option-three">
-            <input type="button" value="Option 4" id="option-four">
+            <input type="button" value="Option 1" id="option-one" class="quiz-button">
+            <input type="button" value="Option 2" id="option-two" class="quiz-button">
+            <input type="button" value="Option 3" id="option-three" class="quiz-button">
+            <input type="button" value="Option 4" id="option-four" class="quiz-button">
             <p class="answer-validator"></p>
         </div>
         <!-- end page (includes initials and option to save)-->
         <div class="end-page">
             <h1>All done!</h1>
-            <p class="score">Your score is: </p>
-            <label>Enter initials</label>
-            <input type="text">
-            <input type="button" value="Submit" id="submit-score">
+            <div class="quiz-result">
+                <p>Your score is: </p>
+                <p class="most-recent-score">0</p>
+            </div>
+            <label for="user-initials">Enter initials:</label>
+            <input type="text" id="user-initials" value="AA">
+            <input type="button" value="Save your score" id="submit-score" class="purple-button">
         </div>
         <!-- high scores page -->
-        <div>
+        <div class="highscore-page">
             <h1>Highscores</h1>
             <ol id="score-list"></ol>
-            <input type="button" value="Go back" id="start-over">
-            <input type="button" value="Clear highscores" id="clear-score">
+            <input type="button" value="Start over" id="start-over" class="purple-button">
+            <input type="button" value="Clear highscores" id="clear-score" class="purple-button">
         </div>
     </main>
     
